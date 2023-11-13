@@ -1,1 +1,1 @@
-# UpSkillDevOpsCourse
+# devops-programme
