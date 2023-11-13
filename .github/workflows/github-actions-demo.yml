@@ -46,7 +46,7 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        run: npm instal
+        run: npm install
 
       - name: Install ESLint
         run: npm install eslint --save-devl
