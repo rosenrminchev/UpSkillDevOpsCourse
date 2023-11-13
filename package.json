@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Rosen Minchev",
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore . --ext .js"
+    "lint": "eslint --ext .js"
   }
 }
 
