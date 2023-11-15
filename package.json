@@ -1,0 +1,9 @@
+{
+  "name": "my-awesome-package",
+  "version": "1.0.0",
+  "author": "Rosen Minchev",
+  "scripts": {
+    "lint": "eslint --ext .js"
+  }
+}
+

@@ -1,0 +1,55 @@
+name: GitHub Actions Demo
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Event Info
+        run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: Runner Info
+        run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+
+      - name: Branch and Repository Info
+        run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Repository Cloned
+        run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
+      - name: Ready to Test
+        run: echo "🖥️ The workflow is now ready to test your code on the runner."
+
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
+
+      - name: Job Status
+        run: echo "🍏 This job's status is ${{ job.status }}."
+
+  linting-job:
+    needs: Explore-GitHub-Actions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install ESLint
+        run: npm install eslint --save-devl
+
+      - name: Run lint
+        run: npm run lint
